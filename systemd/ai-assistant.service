@@ -1,0 +1,15 @@
+[Unit]
+Description=Home Smart Box AI Assistant (intent matcher + Ollama + MQTT + HTTP API)
+After=network.target mosquitto.service ollama.service pi-stats.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/hailo-apps
+ExecStart=/usr/bin/python3 /home/pi/hailo-apps/ai_assistant.py
+Restart=on-failure
+RestartSec=5
+Environment=HOME=/home/pi
+
+[Install]
+WantedBy=multi-user.target

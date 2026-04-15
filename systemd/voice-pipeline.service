@@ -1,0 +1,16 @@
+[Unit]
+Description=Home Smart Box Voice Pipeline (wake word + STT + TTS)
+After=network.target ai-assistant.service kiosk.service
+Wants=ai-assistant.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/hailo-apps
+ExecStart=/usr/bin/python3 /home/pi/hailo-apps/voice_pipeline.py
+Restart=on-failure
+RestartSec=10
+Environment=HOME=/home/pi
+
+[Install]
+WantedBy=multi-user.target

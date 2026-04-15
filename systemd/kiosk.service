@@ -1,0 +1,15 @@
+[Unit]
+Description=Pi Kiosk Dashboard
+After=network.target nginx.service pi-stats.service
+Wants=nginx.service pi-stats.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/local/bin/kiosk.sh
+Restart=on-failure
+RestartSec=5
+Environment=HOME=/home/pi
+
+[Install]
+WantedBy=multi-user.target

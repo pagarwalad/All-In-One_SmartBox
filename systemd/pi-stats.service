@@ -1,0 +1,12 @@
+[Unit]
+Description=Pi Dashboard Stats API
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/pi-stats.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

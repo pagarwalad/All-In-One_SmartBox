@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+.venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Local secrets / config overrides
+*.local
+.env
+secrets.json
+
+# Voice / model artifacts (large, download separately)
+*.onnx
+piper-voices/
+whisper-models/
+
+# Runtime
+*.log
+/tmp/
